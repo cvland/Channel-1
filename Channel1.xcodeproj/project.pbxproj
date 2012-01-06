@@ -15,6 +15,11 @@
 		BF2C939114B217BC00CC6C35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2C939014B217BC00CC6C35 /* AppDelegate.m */; };
 		BF2C939414B217BC00CC6C35 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2C939314B217BC00CC6C35 /* ViewController.m */; };
 		BF2C939714B217BC00CC6C35 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF2C939514B217BC00CC6C35 /* ViewController.xib */; };
+		BF2C939F14B2198B00CC6C35 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2C939E14B2198B00CC6C35 /* XPathQuery.m */; };
+		BF9A50B814B4F4EE00495A3E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9A50B714B4F4EE00495A3E /* Icon.png */; };
+		BF9A50BB14B4F4F400495A3E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9A50BA14B4F4F400495A3E /* Icon@2x.png */; };
+		BF9A50BD14B4F4FD00495A3E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9A50BC14B4F4FD00495A3E /* Default.png */; };
+		BF9A50BF14B4F50300495A3E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9A50BE14B4F50300495A3E /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +27,21 @@
 		BF2C938014B217BC00CC6C35 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BF2C938214B217BC00CC6C35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF2C938414B217BC00CC6C35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BF2C938814B217BC00CC6C35 /* Channel1-Info.plist */ = {isa = PBXFileReference; path = "Channel1-Info.plist"; sourceTree = "<group>"; };
+		BF2C938814B217BC00CC6C35 /* Channel1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Channel1-Info.plist"; sourceTree = "<group>"; };
 		BF2C938A14B217BC00CC6C35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF2C938C14B217BC00CC6C35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BF2C938E14B217BC00CC6C35 /* Channel1-Prefix.pch */ = {isa = PBXFileReference; path = "Channel1-Prefix.pch"; sourceTree = "<group>"; };
-		BF2C938F14B217BC00CC6C35 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF2C938E14B217BC00CC6C35 /* Channel1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Channel1-Prefix.pch"; sourceTree = "<group>"; };
+		BF2C938F14B217BC00CC6C35 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF2C939014B217BC00CC6C35 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BF2C939214B217BC00CC6C35 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		BF2C939214B217BC00CC6C35 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BF2C939314B217BC00CC6C35 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BF2C939614B217BC00CC6C35 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		BF2C939D14B2198B00CC6C35 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		BF2C939E14B2198B00CC6C35 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		BF9A50B714B4F4EE00495A3E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		BF9A50BA14B4F4F400495A3E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		BF9A50BC14B4F4FD00495A3E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BF9A50BE14B4F50300495A3E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +61,10 @@
 		BF2C937114B217BC00CC6C35 = {
 			isa = PBXGroup;
 			children = (
+				BF9A50BE14B4F50300495A3E /* Default@2x.png */,
+				BF9A50BC14B4F4FD00495A3E /* Default.png */,
+				BF9A50BA14B4F4F400495A3E /* Icon@2x.png */,
+				BF9A50B714B4F4EE00495A3E /* Icon.png */,
 				BF2C938614B217BC00CC6C35 /* Channel1 */,
 				BF2C937F14B217BC00CC6C35 /* Frameworks */,
 				BF2C937D14B217BC00CC6C35 /* Products */,
@@ -77,6 +92,8 @@
 		BF2C938614B217BC00CC6C35 /* Channel1 */ = {
 			isa = PBXGroup;
 			children = (
+				BF2C939D14B2198B00CC6C35 /* XPathQuery.h */,
+				BF2C939E14B2198B00CC6C35 /* XPathQuery.m */,
 				BF2C938F14B217BC00CC6C35 /* AppDelegate.h */,
 				BF2C939014B217BC00CC6C35 /* AppDelegate.m */,
 				BF2C939214B217BC00CC6C35 /* ViewController.h */,
@@ -150,6 +167,10 @@
 			files = (
 				BF2C938B14B217BC00CC6C35 /* InfoPlist.strings in Resources */,
 				BF2C939714B217BC00CC6C35 /* ViewController.xib in Resources */,
+				BF9A50B814B4F4EE00495A3E /* Icon.png in Resources */,
+				BF9A50BB14B4F4F400495A3E /* Icon@2x.png in Resources */,
+				BF9A50BD14B4F4FD00495A3E /* Default.png in Resources */,
+				BF9A50BF14B4F50300495A3E /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +184,7 @@
 				BF2C938D14B217BC00CC6C35 /* main.m in Sources */,
 				BF2C939114B217BC00CC6C35 /* AppDelegate.m in Sources */,
 				BF2C939414B217BC00CC6C35 /* ViewController.m in Sources */,
+				BF2C939F14B2198B00CC6C35 /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +231,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -228,6 +251,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -238,7 +262,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Channel1/Channel1-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Channel1/Channel1-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Channel1\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -249,7 +278,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Channel1/Channel1-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Channel1/Channel1-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Channel1\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -274,6 +308,7 @@
 				BF2C939C14B217BC00CC6C35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
