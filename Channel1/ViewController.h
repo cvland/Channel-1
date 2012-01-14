@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShowsInfoLoader.h"
+#import "ShowInfoViewController.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+@interface ViewController : UIViewController <UITableViewDelegate,UITableViewDataSource> {
+    ShowsInfoLoader * showsInfoLoader;
+}
 
+@property (strong, nonatomic) ShowInfoViewController * showInfoViewController;
 
-@property(nonatomic, retain) NSMutableArray * showsAndTimesArray;
+@property(nonatomic, retain) NSArray * daysArray;
 
 @property (strong, nonatomic) IBOutlet UITableView *showsTableView;
 

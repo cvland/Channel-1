@@ -16,10 +16,15 @@
 		BF2C939414B217BC00CC6C35 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2C939314B217BC00CC6C35 /* ViewController.m */; };
 		BF2C939714B217BC00CC6C35 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF2C939514B217BC00CC6C35 /* ViewController.xib */; };
 		BF2C939F14B2198B00CC6C35 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2C939E14B2198B00CC6C35 /* XPathQuery.m */; };
+		BF914CEC14BA17CA00D1A198 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = BF914CEB14BA17CA00D1A198 /* Day.m */; };
 		BF9A50B814B4F4EE00495A3E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9A50B714B4F4EE00495A3E /* Icon.png */; };
 		BF9A50BB14B4F4F400495A3E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9A50BA14B4F4F400495A3E /* Icon@2x.png */; };
 		BF9A50BD14B4F4FD00495A3E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9A50BC14B4F4FD00495A3E /* Default.png */; };
 		BF9A50BF14B4F50300495A3E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9A50BE14B4F50300495A3E /* Default@2x.png */; };
+		BFA701A014C2219B0034BB47 /* ShowInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA7019E14C2219B0034BB47 /* ShowInfoViewController.m */; };
+		BFA701A114C2219B0034BB47 /* ShowInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA7019F14C2219B0034BB47 /* ShowInfoViewController.xib */; };
+		BFFE99A614B8D82D00752C53 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFE99A514B8D82D00752C53 /* Show.m */; };
+		BFFE99AA14B8D8C900752C53 /* ShowsInfoLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFE99A914B8D8C900752C53 /* ShowsInfoLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,10 +43,19 @@
 		BF2C939614B217BC00CC6C35 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		BF2C939D14B2198B00CC6C35 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		BF2C939E14B2198B00CC6C35 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		BF914CEA14BA17CA00D1A198 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
+		BF914CEB14BA17CA00D1A198 /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Day.m; sourceTree = "<group>"; };
 		BF9A50B714B4F4EE00495A3E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		BF9A50BA14B4F4F400495A3E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		BF9A50BC14B4F4FD00495A3E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BF9A50BE14B4F50300495A3E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BFA7019D14C2219B0034BB47 /* ShowInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInfoViewController.h; sourceTree = "<group>"; };
+		BFA7019E14C2219B0034BB47 /* ShowInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInfoViewController.m; sourceTree = "<group>"; };
+		BFA7019F14C2219B0034BB47 /* ShowInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowInfoViewController.xib; sourceTree = "<group>"; };
+		BFFE99A414B8D82D00752C53 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
+		BFFE99A514B8D82D00752C53 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
+		BFFE99A814B8D8C900752C53 /* ShowsInfoLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowsInfoLoader.h; sourceTree = "<group>"; };
+		BFFE99A914B8D8C900752C53 /* ShowsInfoLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowsInfoLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +106,10 @@
 		BF2C938614B217BC00CC6C35 /* Channel1 */ = {
 			isa = PBXGroup;
 			children = (
+				BF914CEA14BA17CA00D1A198 /* Day.h */,
+				BF914CEB14BA17CA00D1A198 /* Day.m */,
+				BFFE99A814B8D8C900752C53 /* ShowsInfoLoader.h */,
+				BFFE99A914B8D8C900752C53 /* ShowsInfoLoader.m */,
 				BF2C939D14B2198B00CC6C35 /* XPathQuery.h */,
 				BF2C939E14B2198B00CC6C35 /* XPathQuery.m */,
 				BF2C938F14B217BC00CC6C35 /* AppDelegate.h */,
@@ -99,6 +117,11 @@
 				BF2C939214B217BC00CC6C35 /* ViewController.h */,
 				BF2C939314B217BC00CC6C35 /* ViewController.m */,
 				BF2C939514B217BC00CC6C35 /* ViewController.xib */,
+				BFA7019D14C2219B0034BB47 /* ShowInfoViewController.h */,
+				BFA7019E14C2219B0034BB47 /* ShowInfoViewController.m */,
+				BFA7019F14C2219B0034BB47 /* ShowInfoViewController.xib */,
+				BFFE99A414B8D82D00752C53 /* Show.h */,
+				BFFE99A514B8D82D00752C53 /* Show.m */,
 				BF2C938714B217BC00CC6C35 /* Supporting Files */,
 			);
 			path = Channel1;
@@ -171,6 +194,7 @@
 				BF9A50BB14B4F4F400495A3E /* Icon@2x.png in Resources */,
 				BF9A50BD14B4F4FD00495A3E /* Default.png in Resources */,
 				BF9A50BF14B4F50300495A3E /* Default@2x.png in Resources */,
+				BFA701A114C2219B0034BB47 /* ShowInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +209,10 @@
 				BF2C939114B217BC00CC6C35 /* AppDelegate.m in Sources */,
 				BF2C939414B217BC00CC6C35 /* ViewController.m in Sources */,
 				BF2C939F14B2198B00CC6C35 /* XPathQuery.m in Sources */,
+				BFFE99A614B8D82D00752C53 /* Show.m in Sources */,
+				BFFE99AA14B8D8C900752C53 /* ShowsInfoLoader.m in Sources */,
+				BF914CEC14BA17CA00D1A198 /* Day.m in Sources */,
+				BFA701A014C2219B0034BB47 /* ShowInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

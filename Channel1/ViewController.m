@@ -8,10 +8,13 @@
 
 #import "ViewController.h"
 #import "XPathQuery.h"
+#import "Show.h"
+#import "Day.h"
 
 @implementation ViewController
-@synthesize showsAndTimesArray;
+@synthesize daysArray;
 @synthesize showsTableView;
+@synthesize showInfoViewController;
 
 - (void)didReceiveMemoryWarning
 {
@@ -20,54 +23,20 @@
 }
 
 
+
 -(void)loadData{
-    NSDate * date = [[NSDate alloc] init];
-    (NSLog(@"%@", date));
-    
-    NSURL *url = [NSURL URLWithString:@"http://www.1tvrus.com/channel1/schedule/"];
-    NSData *urlData = [NSData dataWithContentsOfURL:url];
-    NSLog(@"//span[@class='title']");
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
-    NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents folder
-    NSLog(@"%@", documentsDirectory);
-    [urlData writeToFile:[documentsDirectory stringByAppendingString:@"/test.html"] atomically:YES];
-    
-    
-    NSArray * itemArray = PerformHTMLXPathQuery(urlData, @"//span[@class='title'] | //div[not(@*)]/span[@class='time']");
-    //MutableArray for adding the matched items (times and show titles]
-    showsAndTimesArray = [[NSMutableArray alloc] initWithCapacity:[itemArray count]+1];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"dd.MM.yyyy"];
-    NSString *dateString = [dateFormat stringFromDate:date];
-    
-    [showsAndTimesArray addObject:dateString];
-    
-    
-    
-    for (int i=0;i < [itemArray count]; i++)
-    {
-        //Read the result Dictonary of Xpath Query
-        NSDictionary *itemDict = [itemArray objectAtIndex:i];
-        
-        //Add Time or Showname without link
-        NSMutableArray * childArray = [itemDict valueForKey:@"nodeChildArray"];
-        NSString *time = [itemDict valueForKey:@"nodeContent"];
-        if (time && [time length] > 0) {
-         [showsAndTimesArray addObject:time];
-         NSLog(@"Node %@", time);
-        }
-                
-        //Add Showname with Link (in Subnode of //span[@class='title'])       
-        for (int j=0;j < [childArray count]; j++) {
-            NSArray * nodeSubContent = [childArray valueForKey:@"nodeContent"];
-            NSLog(@"SubNode %@", nodeSubContent);
-            [showsAndTimesArray addObject:[nodeSubContent objectAtIndex:0]];
-        }
-        
-        
-    }
-    
+    daysArray = [showsInfoLoader loadShows];
 }
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        showsInfoLoader = [[ShowsInfoLoader alloc] init];
+        self.title = NSLocalizedString(@"Show List", @"Show List");
+    }
+    return self;
+}
+
 
 #pragma mark - View lifecycle
 
@@ -80,7 +49,7 @@
 
 - (void)viewDidUnload
 {
-    [self setShowsAndTimesArray:nil];
+    [self setDaysArray:nil];
     [self setShowsTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -114,9 +83,26 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.showsAndTimesArray count];
+#pragma mark -
+#pragma mark Table view data source methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	// Number of sections is the number of days.
+	return [self.daysArray count];
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	// Number of rows is the number of shows per day for the specified section.
+	Day * day = [self.daysArray objectAtIndex:section];
+	return [day.showsArray count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	// The header for the section is the date -- get this from the day at the section index.
+	Day * day = [self.daysArray objectAtIndex:section];
+	return [day dayString];
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -125,18 +111,43 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleTableIdentifier];
 
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleTableIdentifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
+                                     reuseIdentifier:SimpleTableIdentifier];
     }
     
-    NSInteger row = [indexPath row];
-    NSString * cellText = [showsAndTimesArray objectAtIndex:row];
+    Day * day = [self.daysArray objectAtIndex:indexPath.section];
+    Show *show = [day.showsArray objectAtIndex:indexPath.row];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"HH:mm"];
+    NSString * timeString = [dateFormat stringFromDate:show.time];
+    NSString * title = show.title;
+
    
-    cell.textLabel.text = cellText; 
+    cell.textLabel.text = [timeString stringByAppendingFormat:@" %@", title];
+    cell.textLabel.font = [UIFont fontWithName:@"GillSans" size:14.0];
+    cell.textLabel.numberOfLines = 2;
+    cell.textLabel.lineBreakMode = UILineBreakModeTailTruncation;
+
+    
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (!self.showInfoViewController) {
+        self.showInfoViewController = [[ShowInfoViewController alloc] initWithNibName:@"ShowInfoViewController" bundle:nil];
+    }
+    
+    Show *selectedObject = [[[self.daysArray objectAtIndex:indexPath.section] showsArray] objectAtIndex:indexPath.row];
+    self.showInfoViewController.show = selectedObject;    
+    [self.navigationController pushViewController:self.showInfoViewController animated:YES];
+    [self.showInfoViewController loadShowPage];
+}
+
 -(void)refresh {
-    [showsAndTimesArray removeAllObjects];
+    [showsInfoLoader removeAllData];
     [self loadData];
     [showsTableView reloadData];
 }
