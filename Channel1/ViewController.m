@@ -65,6 +65,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self.showsTableView deselectRowAtIndexPath:[self.showsTableView indexPathForSelectedRow] animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -143,7 +144,7 @@
     Show *selectedObject = [[[self.daysArray objectAtIndex:indexPath.section] showsArray] objectAtIndex:indexPath.row];
     self.showInfoViewController.show = selectedObject;    
     [self.navigationController pushViewController:self.showInfoViewController animated:YES];
-    [self.showInfoViewController loadShowPage];
+    
 }
 
 -(void)refresh {

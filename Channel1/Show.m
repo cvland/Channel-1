@@ -13,7 +13,17 @@
 @synthesize title;
 @synthesize url;
 
+-(NSString*)showId {
+    return [self.url lastPathComponent];
+};
+
 -(NSString *)description {
-    return [[NSString alloc] initWithFormat:@"%@, %@, %@", time, title, url];
+    return [[NSString alloc] initWithFormat:@"%@, %@, %@, %@", [self showId], time, title, url];
+}
+
+-(NSString *)timeString {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"HH:mm"];
+    return [dateFormat stringFromDate:self.time];
 }
 @end

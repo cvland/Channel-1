@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) Show * show;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
-
--(void)loadShowPage;
+- (IBAction)reminderButtonPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *reminderButton;
 
 @end

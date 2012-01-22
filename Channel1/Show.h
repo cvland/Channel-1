@@ -13,4 +13,7 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSURL * url;
 
+-(NSString*)showId;
+-(NSString*)timeString;
+
 @end
